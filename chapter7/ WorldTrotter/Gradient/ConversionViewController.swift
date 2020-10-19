@@ -67,17 +67,14 @@ celsiusLabel.text =
         textField.resignFirstResponder()
     }
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
-       // if let text = textField.text, let value = Double(text) {
-          //  fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
-        
         if let text = textField.text, let number = numberFormatter.number(from: text) { fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }
         else {
                fahrenheitValue = nil }
            }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-      //  let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-       // let replacementTextHasDecimalSeparator = string.range(of: ".")
+     
         
         let currentLocale = Locale.current
         let decimalSeparator = currentLocale.decimalSeparator ?? "."
